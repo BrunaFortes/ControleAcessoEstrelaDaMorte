@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstrelaDaMorte", "EstrelaDaMorte\EstrelaDaMorte.csproj", "{6C1E9739-21AE-42AB-AAE5-B0A0C88CEB2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.DAL", "Sistema.DAL\Sistema.DAL.csproj", "{D7780155-F895-4BA8-8F99-A87ECC380BE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C1E9739-21AE-42AB-AAE5-B0A0C88CEB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C1E9739-21AE-42AB-AAE5-B0A0C88CEB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C1E9739-21AE-42AB-AAE5-B0A0C88CEB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C1E9739-21AE-42AB-AAE5-B0A0C88CEB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7780155-F895-4BA8-8F99-A87ECC380BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7780155-F895-4BA8-8F99-A87ECC380BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7780155-F895-4BA8-8F99-A87ECC380BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7780155-F895-4BA8-8F99-A87ECC380BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91AEDEBC-9983-4798-A423-61F0D3C25B49}
+	EndGlobalSection
+EndGlobal

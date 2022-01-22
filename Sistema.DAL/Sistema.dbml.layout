@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="Sistema">
+  <DataContextMoniker Name="/SistemaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="40db6738-157e-457e-847b-f41a7fcf703a" absoluteBounds="9, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SistemaDataContext/HistoricoViagens" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04ed4179-7b45-4e2c-a45d-e336982721ae" absoluteBounds="9.015, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="499d62ee-ab63-43cd-98e8-b97dd3c96968" absoluteBounds="3.5, 5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SistemaDataContext/Naves" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3bd7828-eae9-40bc-9d62-9374dafa044f" absoluteBounds="3.515, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af4b78b7-6e0f-41f4-a879-e17d68fa5f92" absoluteBounds="3.5, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SistemaDataContext/Pilotos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1edec655-5e37-47e3-8298-9cfa5c81b2ee" absoluteBounds="3.515, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ddbd640-1378-468d-979e-7c10ea6d05e8" absoluteBounds="6.25, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/SistemaDataContext/PilotosNaves" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65f787d6-5e72-4107-8bdd-93a0e6fcb6a2" absoluteBounds="6.265, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a5ee433-e7a5-46c6-9a18-4bb89804d913" absoluteBounds="0.75, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SistemaDataContext/Planetas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61c96afc-61da-4472-8ddb-0320ab411f90" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 2.06814697265625); (9 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SistemaDataContext/PilotosNaves/PilotosNaves_HistoricoViagens" />
+      <nodes>
+        <classShapeMoniker Id="0ddbd640-1378-468d-979e-7c10ea6d05e8" />
+        <classShapeMoniker Id="40db6738-157e-457e-847b-f41a7fcf703a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.98159912109375); (7.25 : 5.98159912109375); (7.25 : 2.7612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SistemaDataContext/Naves/Naves_PilotosNaves" />
+      <nodes>
+        <classShapeMoniker Id="499d62ee-ab63-43cd-98e8-b97dd3c96968" />
+        <classShapeMoniker Id="0ddbd640-1378-468d-979e-7c10ea6d05e8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.06814697265625); (6.25 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SistemaDataContext/Pilotos/Pilotos_PilotosNaves" />
+      <nodes>
+        <classShapeMoniker Id="af4b78b7-6e0f-41f4-a879-e17d68fa5f92" />
+        <classShapeMoniker Id="0ddbd640-1378-468d-979e-7c10ea6d05e8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.03929768880208); (3.5 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SistemaDataContext/Planetas/Planetas_Pilotos" />
+      <nodes>
+        <classShapeMoniker Id="4a5ee433-e7a5-46c6-9a18-4bb89804d913" />
+        <classShapeMoniker Id="af4b78b7-6e0f-41f4-a879-e17d68fa5f92" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

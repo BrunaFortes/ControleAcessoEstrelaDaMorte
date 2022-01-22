@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EstrelaDaMorte" Class="SistemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-VDLI2RL\IVOSERVER;Initial Catalog=EstrelaDaMorte;Persist Security Info=True;User ID=sa" SettingsObjectName="Sistema.DAL.Properties.Settings" SettingsPropertyName="EstrelaDaMorteConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HistoricoViagens" Member="HistoricoViagens">
+    <Type Name="HistoricoViagens">
+      <Column Name="IdNave" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPiloto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DtSaida" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtChegada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PilotosNaves_HistoricoViagens" Member="PilotosNaves" ThisKey="IdPiloto,IdNave" OtherKey="IdPiloto,IdNave" Type="PilotosNaves" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Naves" Member="Naves">
+    <Type Name="Naves">
+      <Column Name="IdNave" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Modelo" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Passageiros" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carga" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Classe" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Naves_PilotosNaves" Member="PilotosNaves" ThisKey="IdNave" OtherKey="IdNave" Type="PilotosNaves" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pilotos" Member="Pilotos">
+    <Type Name="Pilotos">
+      <Column Name="IdPiloto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AnoNascimento" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IdPlaneta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Pilotos_PilotosNaves" Member="PilotosNaves" ThisKey="IdPiloto" OtherKey="IdPiloto" Type="PilotosNaves" />
+      <Association Name="Planetas_Pilotos" Member="Planetas" ThisKey="IdPlaneta" OtherKey="IdPlaneta" Type="Planetas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PilotosNaves" Member="PilotosNaves">
+    <Type Name="PilotosNaves">
+      <Column Name="IdPiloto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdNave" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FlagAutorizado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PilotosNaves_HistoricoViagens" Member="HistoricoViagens" ThisKey="IdPiloto,IdNave" OtherKey="IdPiloto,IdNave" Type="HistoricoViagens" />
+      <Association Name="Naves_PilotosNaves" Member="Naves" ThisKey="IdNave" OtherKey="IdNave" Type="Naves" IsForeignKey="true" />
+      <Association Name="Pilotos_PilotosNaves" Member="Pilotos" ThisKey="IdPiloto" OtherKey="IdPiloto" Type="Pilotos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Planetas" Member="Planetas">
+    <Type Name="Planetas">
+      <Column Name="IdPlaneta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Rotacao" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Orbita" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Diametro" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Clima" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Populacao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Planetas_Pilotos" Member="Pilotos" ThisKey="IdPlaneta" OtherKey="IdPlaneta" Type="Pilotos" />
+    </Type>
+  </Table>
+</Database>
